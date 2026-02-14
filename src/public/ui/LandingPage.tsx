@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './LandingPage.css';
 
 const imgLogotocanva1 = "https://www.figma.com/api/mcp/asset/0ab693b8-32cf-416f-9e71-99b7dc04d09e";
@@ -14,6 +15,7 @@ interface NavUserProps {
 
 function DropdownAccount() {
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className={`dropdown-account ${isOpen ? 'open' : ''}`} data-name="DropDownAccount" data-node-id="64:737">
@@ -27,13 +29,34 @@ function DropdownAccount() {
       </button>
       {isOpen && (
         <div className="dropdown-background" data-node-id="I64:737;64:508">
-          <p className="dropdown-item" data-node-id="I64:737;64:505">
+          <p
+            className="dropdown-item"
+            data-node-id="I64:737;64:505"
+            onClick={() => {
+              setIsOpen(false);
+              navigate('/login');
+            }}
+          >
             Mi perfil
           </p>
-          <p className="dropdown-item" data-node-id="I64:737;64:506">
+          <p
+            className="dropdown-item"
+            data-node-id="I64:737;64:506"
+            onClick={() => {
+              setIsOpen(false);
+              // placeholder: navigate to documents
+            }}
+          >
             Mis Documentos
           </p>
-          <p className="dropdown-item" data-node-id="I64:737;64:507">
+          <p
+            className="dropdown-item"
+            data-node-id="I64:737;64:507"
+            onClick={() => {
+              setIsOpen(false);
+              // placeholder: perform logout
+            }}
+          >
             Cerrar sesion
           </p>
         </div>

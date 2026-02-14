@@ -1,0 +1,147 @@
+/* Register Page styles (matching Login visual language) */
+
+.register-page {
+  min-height: 100vh;
+  position: relative;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 120px;
+}
+
+.register-header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  color: #0b3b67;
+  margin-bottom: 24px;
+}
+
+.register-main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.register-card {
+  width: 540px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+}
+
+.register-card h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #0b3b67;
+  margin-bottom: 4px;
+  font-size: 24px;
+}
+
+.card-sub {
+  font-size: 12px;
+  color: #17609a;
+  margin-bottom: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  text-align: left;
+}
+
+.label {
+  font-size: 14px;
+  color: #0b3b67;
+  margin-bottom: 6px;
+}
+
+.input {
+  height: 40px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #c9d7e6;
+  background: #ffffff;
+  font-size: 14px;
+}
+
+.primary-btn {
+  margin-top: 12px;
+  height: 48px;
+  background: #083a6a;
+  color: #ffffff;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.muted-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+  color: #6b859a;
+  font-size: 14px;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: #17609a;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.register-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  background: #111840;
+  display: flex;
+  align-items: center;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  font-size: 12px;
+  padding: 0 16px;
+}
+
+.decor-dots,
+.decor-blob {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.95;
+}
+
+.decor-dots.top-right {
+  top: 8px;
+  right: 8px;
+  width: 220px;
+}
+
+.decor-blob.left-bottom {
+  left: 40px;
+  bottom: 80px;
+  width: 220px;
+}
+
+@media (max-width: 520px) {
+  .register-card { width: calc(100% - 40px); }
+}
