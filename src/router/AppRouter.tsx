@@ -4,7 +4,9 @@ import { RegisterPage } from '../modules/Auth/pages/RegisterPage';
 import { DashboardPage } from '../modules/ciudadano/pages/DashboardPage';
 import { CreateSolicitudPage } from '../modules/ciudadano/pages/CreateSolicitudPage';
 import { ProfilePage } from '../modules/ciudadano/pages/ProfilePage';
-import { MyDocumentsPage } from '../modules/ciudadano/pages/MyDocumentsPage'; // <--- 1. IMPORTAR
+import { MyDocumentsPage } from '../modules/ciudadano/pages/MyDocumentsPage';
+// 1. IMPORTAR LA NUEVA PÁGINA
+import { MisSolicitudesPage } from '../modules/ciudadano/pages/MisSolicitudesPage'; 
 
 export const AppRouter = () => {
   return (
@@ -19,7 +21,10 @@ export const AppRouter = () => {
       <Route path="/portal" element={<DashboardPage />} />
       <Route path="/portal/solicitud" element={<CreateSolicitudPage />} />
       <Route path="/portal/perfil" element={<ProfilePage />} />
-      <Route path="/portal/documentos" element={<MyDocumentsPage />} /> {/* <--- 2. AGREGAR RUTA */}
+      <Route path="/portal/documentos" element={<MyDocumentsPage />} />
+      
+      {/* 2. AGREGAR LA NUEVA RUTA AQUÍ */}
+      <Route path="/portal/solicitudes" element={<MisSolicitudesPage />} />
 
       <Route path="*" element={<div>404 - No encontrado</div>} />
     </Routes>
