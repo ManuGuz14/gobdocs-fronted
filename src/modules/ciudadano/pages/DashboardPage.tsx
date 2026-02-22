@@ -1,15 +1,14 @@
 import { Link } from 'react-router-dom';
 import { DashboardLayout } from '../../../shared/layouts/DashboardLayout';
 import { Button } from '../../../shared/ui/Button';
-import tiguerepensando from '../../../assets/TiguerePensando.png';
-import tiguereholding from '../../../assets/TiguereHolding.png';
+import tiguerepensando from '../../../assets/Landing/ManLookingAtDoc.png';
+import tiguereholding from '../../../assets/Landing/ManWithFolder.png';
 
 export const DashboardPage = () => {
   return (
     <DashboardLayout>
-      
       {/* SECCIÓN 1: HERO (Banner Principal - AZUL) */}
-      <div className="bg-[#1a2b5e] -mx-6 md:-mx-8 px-6 md:px-16 pt-16 pb-0 text-white relative overflow-hidden shadow-2xl mb-0 min-h-[500px] flex items-center">
+      <div className="bg-gobdocs-primary -mx-6 md:-mx-8 px-6 md:px-16 pt-16 pb-0 text-white relative overflow-hidden shadow-2xl mb-0 min-h-[500px] flex items-center">
         
         {/* Decoración Fondo */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-white/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
@@ -33,7 +32,7 @@ export const DashboardPage = () => {
         </div>
 
         {/* IMAGEN DEL HOMBRE (TIGUERE PENSANDO) */}
-        <div className="absolute right-0 bottom-0 h-[90%] w-[55%] hidden lg:block pointer-events-none">
+        <div className="absolute right-[12%] bottom-0 h-[90%] w-[55%] hidden lg:block pointer-events-none">
             <img 
                 src={tiguerepensando}
                 alt="Ejecutivo"
@@ -47,15 +46,14 @@ export const DashboardPage = () => {
       </div>
 
       {/* SECCIÓN 2: CHAT IA (Banner Secundario - BLANCO) */}
-      <div className="grid md:grid-cols-2 gap-0 items-center bg-white -mx-6 md:-mx-8 min-h-[500px]">
-        
+      <div className="hidden lg:grid md:grid-cols-2 items-center bg-white -mx-6 md:-mx-8 min-h-[500px]">
         {/* Imagen Izquierda */}
-        <div className="relative h-[500px] group overflow-hidden">
-            <div className="absolute inset-0 bg-[#1a2b5e]/10 group-hover:bg-transparent transition-colors z-10"></div>
-            <img 
-                src={tiguereholding}
-                alt="Consulta IA"
-                className="w-full h-full object-cover object-top transform group-hover:scale-105 transition-transform duration-700"
+        <div className="relative h-[500px] overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 bg-[#1a2b5e]/10 z-10"></div>
+            <img
+              src={tiguereholding}
+              alt="Consulta IA"
+              className="w-full h-full object-cover object-top"
             />
         </div>
         

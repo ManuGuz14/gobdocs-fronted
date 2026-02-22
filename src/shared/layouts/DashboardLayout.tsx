@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import { User, ChevronDown, MessageCircle, ArrowLeft } from 'lucide-react'; 
-import logo from '../../assets/GbdLogo.png'; 
+import logo from '../../assets/GobDocsLogo.png'; 
 import { ChatWidget } from '../components/ChatWidget';
 
 interface DashboardLayoutProps {
@@ -15,10 +15,10 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) =>
   const showBackButton = location.pathname !== '/portal';
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col relative overflow-x-hidden">
+    <div className="min-h-screen bg-white flex flex-col relative overflow-x-hidden">
       
       {/* NAVBAR */}
-      <nav className="bg-gobdocs-primary text-white py-4 px-8 shadow-lg z-50 w-full relative">
+      <nav className="bg-gobdocs-primary text-white py-10 px-8  z-50 w-full relative">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           
           <Link to="/portal" className="flex items-center gap-3 hover:opacity-90 transition-opacity">

@@ -1,5 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom'; // <--- 1. Importar useNavigate
 import { AuthLayout } from '../../../shared/layouts/AuthLayout';
+import LoginGradientVector from '../../../assets/Login/LoginGradientVector.png';
+import LoginGradientVector2 from '../../../assets/Login/LoginGradientVector2.png';
 import { Input } from '../../../shared/ui/Input';
 import { Button } from '../../../shared/ui/Button';
 
@@ -15,7 +17,19 @@ export const LoginPage = () => {
   };
 
   return (
-    <AuthLayout title="Bienvenido a GobDocs RD">
+    <AuthLayout
+      title="Bienvenido a GobDocs RD"
+      decoration={
+        <><img
+          src={LoginGradientVector}
+          alt="Login gradient"
+          className="absolute left-[85%] -translate-x-1/2 top-[3rem] w-70 opacity-95 pointer-events-none -z-10" /><img
+            src={LoginGradientVector2}
+            alt="Login gradient 2"
+            className="absolute left-[20%] -translate-x-1/2 top-[20rem] w-70 opacity-95 pointer-events-none -z-10" /></>
+      }
+
+    >
       <div className="text-center mb-8">
         <h2 className="text-2xl font-semibold text-gobdocs-primary">Inicio de sesión</h2>
         <p className="text-gray-500 text-sm mt-1">

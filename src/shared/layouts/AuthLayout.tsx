@@ -3,9 +3,10 @@ import React from 'react';
 interface AuthLayoutProps {
   children: React.ReactNode;
   title: string;
+  decoration?: React.ReactNode;
 }
 
-export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title }) => {
+export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title, decoration }) => {
   return (
     <div className="min-h-screen w-full relative flex flex-col justify-between bg-white overflow-hidden">
       
@@ -16,16 +17,25 @@ export const AuthLayout: React.FC<AuthLayoutProps> = ({ children, title }) => {
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-[radial-gradient(#1a2b5e_1px,transparent_1px)] [background-size:20px_20px] opacity-60 -translate-x-1/3 translate-y-1/3 rounded-full" />
 
       {/* Contenido Principal */}
-      <div className="flex-1 flex flex-col items-center justify-center z-10 px-4">
+      <div className="flex-1 flex flex-col items-center justify-center z-10 px-4 relative">
         
-        {/* Título Principal fuera de la tarjeta */}
-        <h1 className="text-3xl md:text-4xl font-bold text-gobdocs-primary mb-8 text-center">
-          {title}
-        </h1>
+        {/* 🔹 Wrapper relativo: título + card + decoraciones */}
+        <div className="relative flex flex-col items-center">
 
-        {/* Tarjeta Blanca (Card) */}
-        <div className="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-lg border border-gray-100">
-          {children}
+          {/* Optional page-specific decoration (e.g. login gradient image) */}
+          {decoration}
+          
+          {/* Título Principal fuera de la tarjeta */}
+          {title && (
+            <h1 className="text-3xl md:text-4xl font-bold text-gobdocs-primary mb-8 text-center">
+              {title}
+            </h1>
+          )}
+
+          {/* Tarjeta Blanca (Card) */}
+          <div className="bg-white p-8 md:p-10 rounded-2xl shadow-2xl w-full max-w-lg border border-gray-100 relative z-20">
+            {children}
+          </div>
         </div>
       </div>
 
