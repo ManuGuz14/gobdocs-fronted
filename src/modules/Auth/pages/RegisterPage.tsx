@@ -1,14 +1,26 @@
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { AuthLayout } from '../../../shared/layouts/AuthLayout';
+import LoginGradientVector from '../../../assets/Login/LoginGradientVector.png';
+import LoginGradientVector2 from '../../../assets/Login/LoginGradientVector2.png';
 import { Input } from '../../../shared/ui/Input';
 import { Button } from '../../../shared/ui/Button';
 
 export const RegisterPage = () => {
   return (
     // Pasamos title vacío para que no salga el texto grande afuera, ya que tu diseño lo tiene adentro
-    <AuthLayout title="">
-      
+    <AuthLayout title=""
+       decoration={
+        <><img
+          src={LoginGradientVector}
+          alt="Login gradient"
+          className="absolute left-[85%] -translate-x-1/2 top-[3rem] w-70 opacity-95 pointer-events-none -z-10" /><img
+            src={LoginGradientVector2}
+            alt="Login gradient 2"
+            className="absolute left-[20%] -translate-x-1/2 top-[20rem] w-70 opacity-95 pointer-events-none -z-10" /></>
+      }
+
+    >     
       {/* Encabezado de la Tarjeta (Flecha + Título) */}
       <div className="relative flex items-center justify-center mb-8">
         {/* Botón de regreso (absoluto a la izquierda) */}
@@ -26,7 +38,7 @@ export const RegisterPage = () => {
       </div>
 
       {/* Formulario */}
-      <form className="space-y-2">
+      <form className="space-y-4 max-w-xl md:max-w-4xl">
         <Input 
           label="Nombres" 
           placeholder="Ej. Juan" 
